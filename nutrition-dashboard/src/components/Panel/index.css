@@ -1,0 +1,23 @@
+.nav {
+  background-color: #0a1929 !important;
+  height: 100% !important;
+}
+
+.panel-wrapper {
+  height: 100%;
+}
+
+.MuiBox-root {
+  height: 100%;
+}
+
+.nav-icon {
+  color: aliceblue !important;
+}
+
+.power-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: aliceblue;
+}

@@ -1,0 +1,19 @@
+.panel-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.panel-wrapper {
+  flex: 1;
+  height: 100%;
+}
+
+/* .dashboard-wrapper {
+  flex: 11;
+}
+
+.bodymeasure-wrapper {
+  flex: 11;
+} */
