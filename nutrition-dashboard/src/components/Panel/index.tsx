@@ -3,9 +3,6 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import TableChartIcon from "@mui/icons-material/TableChart";
 import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
@@ -16,6 +13,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import ContentPasteIcon from "@mui/icons-material/ContentPaste";
 import { useTheme } from "@mui/material/styles";
 import { logout } from "../../store/main";
 import { useDispatch } from "react-redux";
@@ -80,11 +78,13 @@ export default function Panel() {
               icon={<TableChartIcon />}
             />
           </Link>
-          {/* <BottomNavigationAction
-            className="nav-icon"
-            label="Favorites"
-            icon={<FavoriteIcon />}
-          /> */}
+          <Link to="/recipes" title="CustomizedRecipes">
+            <BottomNavigationAction
+              className="nav-icon"
+              label="CustomizedRecipes"
+              icon={<ContentPasteIcon />}
+            />
+          </Link>
           <Link to="/bodymeasure">
             <BottomNavigationAction
               href="/bodymeasure"

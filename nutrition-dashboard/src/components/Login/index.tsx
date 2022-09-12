@@ -120,6 +120,7 @@ export default function Login() {
         .post("http://localhost:8888/users", {
           username,
           password,
+          bodymeasure: [],
         })
         .then((res) => {
           console.log(res);
@@ -148,7 +149,7 @@ export default function Login() {
         .then((res) => {
           if (res.data[0].password === password) {
             setLoginSuccess(true);
-            dispatch(login(true));
+            dispatch(login({ status: true, id: res.data[0].id }));
             console.log(res);
           } else {
             setLoginError(true);

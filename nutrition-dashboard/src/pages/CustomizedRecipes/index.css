@@ -1,0 +1,26 @@
+.recipes-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a1929;
+  border-top: 5px solid #1a283a;
+  color: aliceblue;
+  font-size: 2rem;
+}
+
+.recipes-wrapper td,
+.recipes-wrapper th {
+  width: 100vw;
+  height: 100px;
+}
+
+.eat-btn {
+  width: 100px;
+  height: 50px;
+  font-size: 2rem;
+  border-radius: 10px;
+}

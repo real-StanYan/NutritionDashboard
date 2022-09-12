@@ -5,6 +5,7 @@ import Panel from "./components/Panel";
 import Dashboard from "./pages/DashBoard";
 import BodyMeasure from "./pages/BodyMeasure";
 import UserInfor from "./pages/UserInfor";
+import Recipes from "./pages/CustomizedRecipes";
 
 export default function Main() {
   return (
@@ -13,6 +14,7 @@ export default function Main() {
       <Routes>
         <Route path="/" element={<Dashboard />}></Route>
         <Route path="datas" element={<Dashboard />}></Route>
+        <Route path="recipes" element={<Recipes />}></Route>
         <Route path="bodymeasure" element={<BodyMeasure />}></Route>
         <Route path="userinfor" element={<UserInfor />}></Route>
       </Routes>
