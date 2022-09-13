@@ -1,9 +1,0 @@
-{
-  "banana": [{ "kcal": 88, "protein": 1.1, "fat": 0.3, "carbs": 23 }],
-  "beef": [{ "kcal": 250, "protein": 26, "fat": 15, "carbs": 0 }],
-  "lamb": [{ "kcal": 242.1, "protein": 27, "fat": 14, "carbs": 0 }],
-  "pork": [{ "kcal": 242.1, "protein": 27, "fat": 14, "carbs": 0 }],
-  "noodle": [{ "kcal": 138.1, "protein": 4.5, "fat": 2.1, "carbs": 25 }],
-  "rice": [{ "kcal": 130, "protein": 2.7, "fat": 0.3, "carbs": 28 }],
-  "potato": [{ "kcal": 76.7, "protein": 2, "fat": 0.1, "carbs": 17 }]
-}

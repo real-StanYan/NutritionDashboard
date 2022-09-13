@@ -7,7 +7,12 @@ import { Theme, useTheme } from "@mui/material/styles";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import { useSelector, useDispatch } from "react-redux";
-import { userInforList, bodyMeasured, calNutrition } from "../../store/main";
+import {
+  userInforList,
+  bodyMeasured,
+  calNutrition,
+  clearBodyData,
+} from "../../store/main";
 import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
 
@@ -166,6 +171,7 @@ export default function Userinfor(props: any) {
     axios
       .delete(`http://localhost:8888/bodymeasure/${id}`)
       .then((res) => {
+        console.log("ERROR: " + res);
         console.log(res);
         dispatch(bodyMeasured(false));
       })
@@ -182,6 +188,8 @@ export default function Userinfor(props: any) {
         dispatch(calNutrition(res.data));
       })
       .catch((err) => {
+        dispatch(clearBodyData);
+        dispatch(bodyMeasured(false));
         console.log(err);
       });
   }, []);

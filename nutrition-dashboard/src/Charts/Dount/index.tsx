@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import "./index.css";
@@ -9,6 +9,21 @@ export default function Dount() {
   const protein = data.main.nutritions.protein;
   const fat = data.main.nutritions.fat;
   const carbs = data.main.nutritions.carbs;
+  const [dkcal, setdKcal] = useState(0);
+  const [dprotein, setdProtein] = useState(0);
+  const [dfat, setdFat] = useState(0);
+  const [dcarbs, setdCarbs] = useState(0);
+  const eatList = JSON.parse(localStorage.getItem("eatList") as any);
+
+  useEffect(() => {
+    eatList.forEach((item: any) => {
+      setdKcal(dkcal + item.kcal);
+      setdProtein(dprotein + item.protein);
+      setdFat(dfat + item.fat);
+      setdCarbs(dcarbs + item.carbs);
+    });
+  }, []);
+
   return (
     <div className="dount-wrapper">
       {/* #1 Calorie*/}

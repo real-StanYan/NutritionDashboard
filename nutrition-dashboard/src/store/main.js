@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux";
 import axios from "axios";
+let eatList = [];
 
 export const mainSlice = createSlice({
   name: "main",
@@ -33,6 +33,10 @@ export const mainSlice = createSlice({
     },
     bodyMeasured: (state, action) => {
       state.bodyMeasured = action.payload;
+    },
+    clearBodyData: (state) => {
+      state.userInforList = undefined;
+      state.nutritions = undefined;
     },
     userInforList: (state, action) => {
       console.log("action:", action);
@@ -79,11 +83,37 @@ export const mainSlice = createSlice({
         carbs,
       };
     },
+    addEatList: (state, action) => {
+      const name = action.payload.name;
+      const kcal = action.payload.kcal;
+      const protein = action.payload.protein;
+      const fat = action.payload.fat;
+      const carbs = action.payload.carbs;
+      eatList.push({
+        name,
+        kcal,
+        protein,
+        fat,
+        carbs,
+      });
+      localStorage.setItem("eatList", JSON.stringify(eatList));
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { login, logout, userInforList, bodyMeasured, calNutrition } =
-  mainSlice.actions;
+export const {
+  login,
+  logout,
+  userInforList,
+  clearBodyData,
+  bodyMeasured,
+  calNutrition,
+  addEatList,
+} = mainSlice.actions;
+
+export const addEatListAsync = (action) => (dispatch) => {
+  dispatch(addEatList(action));
+};
 
 export default mainSlice.reducer;
